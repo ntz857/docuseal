@@ -62,38 +62,6 @@
           {{ t('download') }}
         </span>
       </button>
-      <a
-        v-if="isDemo"
-        target="_blank"
-        href="https://github.com/docusealco/docuseal"
-        class="white-button flex items-center space-x-1 w-full"
-      >
-        <IconBrandGithub />
-        <span>
-          Star on Github
-        </span>
-      </a>
-      <a
-        v-if="isDemo"
-        href="https://docuseal.co/sign_up"
-        class="white-button flex items-center space-x-1 w-full"
-      >
-        <IconLogin />
-        <span>
-          {{ t('create_a_free_account') }}
-        </span>
-      </a>
-    </div>
-    <div
-      v-if="attribution"
-      class="text-center mt-4"
-    >
-      {{ t('signed_with') }}
-      <a
-        href="https://www.docuseal.co/start"
-        target="_blank"
-        class="underline"
-      >DocuSeal</a> - {{ t('open_source_documents_software') }}
     </div>
   </div>
 </template>

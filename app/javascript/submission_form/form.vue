@@ -711,7 +711,7 @@ export default {
       return this.stepFields[this.currentStep] || []
     },
     browserLanguage () {
-      return (navigator.language || navigator.userLanguage || 'en').split('-')[0]
+      return (navigator.language || navigator.userLanguage || 'zh').split('-')[0]
     },
     queryParams () {
       return new URLSearchParams(window.location.search)

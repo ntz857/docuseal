@@ -913,7 +913,7 @@ const ko = {
   files: '파일'
 }
 
-const zhCn = {
+const zh = {
   text: '文本',
   by_clicking_you_agree_to_the: '点击 "{button}"，表示您同意',
   electronic_signature_disclosure: '电子签名披露',
@@ -983,6 +983,6 @@ const zhCn = {
   upload: '上传',
   files: '文件'
 }
-const i18n = { en, es, it, de, fr, pl, uk, cs, pt, he, nl, ar, ko , zhCn }
+const i18n = { en, es, it, de, fr, pl, uk, cs, pt, he, nl, ar, ko , zh }
 
 export default i18n
