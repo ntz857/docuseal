@@ -2,7 +2,7 @@ FROM ruby:3.3.1-alpine3.18 as fonts
 
 WORKDIR /fonts
 
-RUN apk --no-cache add fontforge wget && wget https://github.com/satbyy/go-noto-universal/releases/download/v7.0/GoNotoKurrent-Regular.ttf && wget https://github.com/satbyy/go-noto-universal/releases/download/v7.0/GoNotoKurrent-Bold.ttf && wget https://github.com/impallari/DancingScript/raw/master/fonts/DancingScript-Regular.otf && wget https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansSymbols2/hinted/ttf/NotoSansSymbols2-Regular.ttf && wget https://github.com/Maxattax97/gnu-freefont/raw/master/ttf/FreeSans.ttf && wget https://github.com/impallari/DancingScript/raw/master/OFL.txt
+RUN apk --no-cache add fontforge wget && wget https://github.com/satbyy/go-noto-universal/releases/download/v7.0/GoNotoKurrent-Regular.ttf && wget https://github.com/satbyy/go-noto-universal/releases/download/v7.0/GoNotoKurrent-Bold.ttf && wget https://github.com/ntz857/docuseal/raw/master/fonts/DancingScript-Regular.ttf && wget https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansSymbols2/hinted/ttf/NotoSansSymbols2-Regular.ttf && wget https://github.com/Maxattax97/gnu-freefont/raw/master/ttf/FreeSans.ttf && wgethttps://github.com/ntz857/docuseal/blob/master/fonts/OFL.txt
 
 RUN fontforge -lang=py -c 'font1 = fontforge.open("FreeSans.ttf"); font2 = fontforge.open("NotoSansSymbols2-Regular.ttf"); font1.mergeFonts(font2); font1.generate("FreeSans.ttf")'
 
@@ -69,7 +69,7 @@ COPY ./public ./public
 COPY ./tmp ./tmp
 COPY LICENSE README.md Rakefile config.ru .version ./
 
-COPY --from=fonts /fonts/GoNotoKurrent-Regular.ttf /fonts/GoNotoKurrent-Bold.ttf /fonts/DancingScript-Regular.otf /fonts/OFL.txt /fonts
+COPY --from=fonts /fonts/GoNotoKurrent-Regular.ttf /fonts/GoNotoKurrent-Bold.ttf /fonts/DancingScript-Regular.ttf /fonts/OFL.txt /fonts
 COPY --from=fonts /fonts/FreeSans.ttf /usr/share/fonts/freefont
 COPY --from=webpack /app/public/packs ./public/packs
 
