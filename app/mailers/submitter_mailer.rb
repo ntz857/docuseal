@@ -4,7 +4,7 @@ class SubmitterMailer < ApplicationMailer
   MAX_ATTACHMENTS_SIZE = 10.megabytes
   SIGN_TTL = 1.hour + 20.minutes
 
-  DEFAULT_INVITATION_SUBJECT = 'You are invited to submit a form'
+  DEFAULT_INVITATION_SUBJECT = '收到一封签署文件的邀请'
 
   def invitation_email(submitter)
     @current_account = submitter.submission.account
@@ -86,7 +86,7 @@ class SubmitterMailer < ApplicationMailer
       if @subject.present?
         ReplaceEmailVariables.call(@subject, submitter:)
       else
-        'Your document copy'
+        '您签署的文件'
       end
 
     mail(from: from_address_for_submitter(submitter),

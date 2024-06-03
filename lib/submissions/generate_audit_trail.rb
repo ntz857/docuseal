@@ -60,12 +60,12 @@ module Submissions
     def build_audit_trail(submission)
       account = submission.account
       verify_url = Rails.application.routes.url_helpers.settings_esign_url(**Docuseal.default_url_options)
-      page_size =
-        if TimeUtils.timezone_abbr(account.timezone, Time.current.beginning_of_year).in?(US_TIMEZONES)
-          :Letter
-        else
-          :A4
-        end
+      page_size = :A4
+        # if TimeUtils.timezone_abbr(account.timezone, Time.current.beginning_of_year).in?(US_TIMEZONES)
+        #   :Letter
+        # else
+        #   :A4
+        # end
 
       composer = HexaPDF::Composer.new(skip_page_creation: true)
       composer.document.task(:pdfa) if FONT_NAME == 'GoNotoKurrent'
@@ -311,7 +311,8 @@ module Submissions
             [
               { text: SubmissionEvents::EVENT_NAMES[event.event_type.to_sym],
                 font: [FONT_NAME, { variant: :bold }] },
-              event.event_type.include?('send_') ? ' to ' : ' by ',
+              # event.event_type.include?('send_') ? ' to ' : ' by ',
+              event.event_type.include?('send_') ? '给' : '被',
               if event.event_type.include?('sms') || event.event_type.include?('phone')
                 event.data['phone'] || submitter.phone
               else

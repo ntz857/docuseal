@@ -40,7 +40,7 @@ class AccountConfig < ApplicationRecord
 
   DEFAULT_VALUES = {
     SUBMITTER_INVITATION_EMAIL_KEY => {
-      'subject' => 'You are invited to submit a form',
+      'subject' => '收到一封签署文件的邀请',
       'body' => "Hi there,\n\n" \
                 "You have been invited to submit the \"{{template.name}}\" form.\n\n" \
                 "{{submitter.link}}\n\n" \

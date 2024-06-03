@@ -1,9 +1,9 @@
 <% if @body.present? %>
   <%= render 'custom_content', content: @body, submitter: @submitter, sig: @sig %>
 <% else %>
-  <p>Hi there,</p>
-  <p>Please check the copy of your "<%= @submitter.submission.template.name %>" submission in the email attachments.</p>
-  <p>Alternatively, you can review and download your copy using:</p>
+  <p>您好，</p>
+  <p>请在附件查看您的签署 "<%= @submitter.submission.template.name %>" </p>
+  <p>另外，也可以通过以下链接下载保存：</p>
   <p>
     <%= link_to @submitter.template.name, submissions_preview_url(@submitter.submission.slug, { sig: @sig }.compact) %>
   </p>
@@ -11,3 +11,4 @@
     Thanks,<br><%= @current_account.name %>
   </p>
 <% end %>
+

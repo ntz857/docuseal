@@ -5,10 +5,9 @@
     <p><%= link_to nil, submit_form_url(slug: @submitter.slug, t: SubmissionEvents.build_tracking_param(@submitter, 'click_email')) %></p>
   <% end %>
 <% else %>
-  <p>Hi there,</p>
-  <p>You have been invited to submit the "<%= @submitter.submission.template.name %>" form.</p>
-  <p><%= link_to 'Submit Form', submit_form_url(slug: @submitter.slug, t: SubmissionEvents.build_tracking_param(@submitter, 'click_email')) %></p>
-  <p>Please contact us by replying to this email if you didn't request this.</p>
+  <p>您好,</p>
+  <p>您被邀请签署 "<%= @submitter.submission.template.name %>" 文件。</p>
+  <p><%= link_to '立即签署', submit_form_url(slug: @submitter.slug, t: SubmissionEvents.build_tracking_param(@submitter, 'click_email')) %></p>
   <p>
     Thanks,<br><%= @current_account.name %>
   </p>
