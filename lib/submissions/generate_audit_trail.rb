@@ -50,7 +50,7 @@ module Submissions
 
       ActiveStorage::Attachment.create!(
         blob: ActiveStorage::Blob.create_and_upload!(
-          io: StringIO.new(io.string), filename: "Audit Log - #{submission.template.name}.pdf"
+          io: StringIO.new(io.string), filename: "签署日志 - #{submission.template.name}.pdf"
         ),
         name: 'audit_trail',
         record: submission
@@ -112,7 +112,7 @@ module Submissions
       composer.column(columns: 1) do |column|
         add_logo(column, submission)
 
-        column.text(account.testing? ? 'Testing Log - Not for Production Use' : 'Audit Log',
+        column.text(account.testing? ? 'Testing Log - Not for Production Use' : '签署日志',
                     font_size: 16,
                     padding: [10, 0, 0, 0],
                     position: :float, text_align: :right)
@@ -335,8 +335,7 @@ module Submissions
     def add_logo(column, _submission = nil)
       column.image(PdfIcons.logo_io, width: 40, height: 40, position: :float)
 
-      column.formatted_text([{ text: 'DocuSeal',
-                               link: Docuseal::PRODUCT_URL }],
+      column.formatted_text([{ text: '时贰号' }],
                             font_size: 20,
                             font: [FONT_NAME, { variant: :bold }],
                             width: 100,

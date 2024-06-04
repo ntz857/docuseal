@@ -862,7 +862,7 @@ export default {
   },
   methods: {
     t (key) {
-      return this.i18n[key] || i18n[this.language?.toLowerCase()]?.[key] || i18n[this.browserLanguage]?.[key] || i18n.en[key] || key
+      return this.i18n[key] || i18n[this.language?.toLowerCase()]?.[key] || i18n[this.browserLanguage]?.[key] || i18n.zh[key] || key
     },
     onOrientationChange (event) {
       this.orientation = event.target.type

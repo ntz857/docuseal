@@ -299,7 +299,7 @@ import MobileFields from './mobile_fields'
 import { IconUsersPlus, IconDeviceFloppy, IconWritingSign, IconInnerShadowTop } from '@tabler/icons-vue'
 import { v4 } from 'uuid'
 import { ref, computed } from 'vue'
-import { en as i18nEn } from './i18n'
+import { zh_CN as i18nEn } from './i18n'
 
 export default {
   name: 'TemplateBuilder',

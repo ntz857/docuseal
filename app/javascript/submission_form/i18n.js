@@ -983,6 +983,6 @@ const zh = {
   upload: '上传',
   files: '文件'
 }
-const i18n = { en, es, it, de, fr, pl, uk, cs, pt, he, nl, ar, ko , zh }
+const i18n = {zh, en, es, it, de, fr, pl, uk, cs, pt, he, nl, ar, ko }
 
 export default i18n
