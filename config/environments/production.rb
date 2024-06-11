@@ -159,4 +159,5 @@ Rails.application.configure do
       }
     end
   end
+  config.action_dispatch.default_headers.except!('X-Frame-Options')
 end

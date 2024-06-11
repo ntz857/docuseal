@@ -4,8 +4,8 @@ module Submissions
   module GenerateAuditTrail
     FONT_SIZE = 9
     TEXT_COLOR = '525252'
-    FONT_PATH = '/fonts/GoNotoKurrent-Regular.ttf'
-    FONT_BOLD_PATH = '/fonts/GoNotoKurrent-Bold.ttf'
+    FONT_PATH = '/fonts/AlibabaPuHuiTi-3-55-Regular.ttf'
+    FONT_BOLD_PATH = '/fonts/AlibabaPuHuiTi-3-85-Bold.ttf'
     FONT_NAME = if File.exist?(FONT_PATH)
                   'GoNotoKurrent'
                 else

@@ -25,6 +25,8 @@ class SendSubmissionCreatedWebhookRequestJob < ApplicationJob
                      data: Submissions::SerializeForApi.call(submission)
                    }.to_json,
                    'Content-Type' => 'application/json',
+                   'Server' => '1',
+                   'think-lang' => 'zh-cn',
                    'User-Agent' => USER_AGENT)
     rescue Faraday::Error
       nil

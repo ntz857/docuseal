@@ -7,12 +7,15 @@ module Submitters
 
     FONTS = {
       'Dancing Script Regular' => '/fonts/DancingScript-Regular.otf',
-      'Go Noto Kurrent-Bold Bold' => '/fonts/GoNotoKurrent-Bold.ttf'
+      'Go Noto Kurrent-Bold Bold' => '/fonts/GoNotoKurrent-Bold.ttf',
+      'Alibaba PuHuiTi 3 55 Regular' => '/fonts/AlibabaPuHuiTi-3-55-Regular.ttf',
+      'Alibaba PuHuiTi 3 85 Bold' => '/fonts/AlibabaPuHuiTi-3-85-Bold.ttf',
     }.freeze
 
     FONT_ALIASES = {
-      'initials' => 'Go Noto Kurrent-Bold Bold',
-      'signature' => 'Dancing Script Regular'
+      'initials' => 'Alibaba PuHuiTi 3 85 Bold',
+      'signature' =>  'Alibaba PuHuiTi 3 55 Regular',
+      'stamp' => 'Alibaba PuHuiTi 3 85 Bold',
     }.freeze
 
     module_function

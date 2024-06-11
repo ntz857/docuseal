@@ -62,6 +62,16 @@
           {{ t('download') }}
         </span>
       </button>
+      <button  
+        v-if="!isWebView && withDownloadButton" 
+        class="white-button !h-auto flex items-center space-x-1 w-full"
+        :disabled="isDownloading"
+        @click.prevent="window.close()"
+        >
+        <span>
+          {{ t('请手动关闭当前页面') }}
+        </span>
+      </button>
     </div>
   </div>
 </template>

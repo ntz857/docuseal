@@ -190,7 +190,7 @@ const zh_CN = {
   multiple: '多个',
   radio: '单选',
   cells: '单元格',
-  stamp: '图章',
+  stamp: '印章',
   payment: '支付',
   phone: '电话',
   field: '字段',

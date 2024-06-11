@@ -11,6 +11,19 @@ module Submitters
                         "\vIDATx\xDAc\xFC_\u000F\u0000\u0002\x83\u0001\x804\xC3ڨ" \
                         "\u0000\u0000\u0000\u0000IEND\xAEB`\x82"
 
+    FONTS = {
+      'Dancing Script Regular' => '/fonts/DancingScript-Regular.otf',
+      'Go Noto Kurrent-Bold Bold' => '/fonts/GoNotoKurrent-Bold.ttf',
+      'Alibaba PuHuiTi 3 55 Regular' => '/fonts/AlibabaPuHuiTi-3-55-Regular.ttf',
+      'Alibaba PuHuiTi 3 85 Bold' => '/fonts/AlibabaPuHuiTi-3-85-Bold.ttf',
+    }.freeze
+
+    FONT_ALIASES = {
+      'initials' => 'Alibaba PuHuiTi 3 85 Bold',
+      'signature' =>  'Alibaba PuHuiTi 3 55 Regular',
+      'stamp' => 'Alibaba PuHuiTi 3 85 Bold',
+    }.freeze
+
     module_function
 
     def call(submitter, with_logo: true)
@@ -83,8 +96,8 @@ module Submitters
       digitally_signed_by = I18n.t(:digitally_signed_by, locale: submitter.account.locale)
 
       text = %(<span size="90">#{digitally_signed_by}: <b>#{name}</b>\n#{role}#{time} #{timezone}</span>)
-
-      Vips::Image.text(text, width: WIDTH, height: HEIGHT)
+      font = FONT_ALIASES['stamp']
+      Vips::Image.text(text, font:, fontfile: FONTS[font], width: WIDTH, height: HEIGHT)
     end
 
     def load_logo(_submitter)

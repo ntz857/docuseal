@@ -27,6 +27,8 @@ class SendFormViewedWebhookRequestJob < ApplicationJob
                      data: Submitters::SerializeForWebhook.call(submitter)
                    }.to_json,
                    'Content-Type' => 'application/json',
+                   'Server' => '1',
+                   'think-lang' => 'zh-cn',
                    'User-Agent' => USER_AGENT)
     rescue Faraday::Error
       nil

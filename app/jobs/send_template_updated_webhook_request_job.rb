@@ -25,6 +25,8 @@ class SendTemplateUpdatedWebhookRequestJob < ApplicationJob
                      data: Templates::SerializeForApi.call(template)
                    }.to_json,
                    'Content-Type' => 'application/json',
+                   'Server' => '1',
+                   'think-lang' => 'zh-cn',
                    'User-Agent' => USER_AGENT)
     rescue Faraday::Error
       nil

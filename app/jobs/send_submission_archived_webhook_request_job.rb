@@ -25,6 +25,8 @@ class SendSubmissionArchivedWebhookRequestJob < ApplicationJob
                      data: submission.as_json(only: %i[id archived_at])
                    }.to_json,
                    'Content-Type' => 'application/json',
+                   'Server' => '1',
+                   'think-lang' => 'zh-cn',
                    'User-Agent' => USER_AGENT)
     rescue Faraday::Error
       nil

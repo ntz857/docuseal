@@ -1,0 +1,24 @@
+zh: &zh
+  email: 邮箱
+  verification_code_code: '验证码: %{code}'
+  digitally_signed_by: 数字签名来自
+  role: 角色
+  provide_your_email_to_start: 提供您的电子邮件以开始
+  start: 开始
+  starting: 正在开始
+  form_has_been_deleted_by_html: '表单已被<span class="font-semibold">%{name}</span>删除。'
+  invited_by_html: '被<span class="font-semibold">%{name}</span>邀请'
+  you_have_been_invited_to_submit_a_form: 您已被邀请提交表单
+  signed_on_time: '签名于 %{time}'
+  form_has_been_submitted_already: 表单已提交
+  send_copy_to_email: 将副本发送到电子邮件
+  sending: 发送中
+  resubmit: 重新提交
+  form_has_been_deleted_by_html: '表单已被<span class="font-semibold">%{name}</span>删除。'
+  or: 或
+  download_documents: 下载文件
+  downloading: 正在下载
+  completed_successfully: 成功完成
+
+  zh-CN:
+  <<: *zh
